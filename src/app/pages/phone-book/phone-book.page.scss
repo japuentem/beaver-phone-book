@@ -1,0 +1,36 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 9fr;
+  gap: 0px;
+  grid-template-areas:
+    "cards-container"
+    "button";
+  height: 100%;
+}
+
+.cards-container {
+  display: grid;
+  gap: 10px;
+  grid-auto-flow: row;
+  grid-template-areas: "card";
+  grid-area: cards-container;
+  justify-items: center;
+  padding: 10px;
+}
+
+.cards {
+  border-radius: 10px;
+  min-height: 100px;
+  padding: 5px;
+  padding: 10px;
+  position: relative;
+  overflow: hidden;
+  width: 90%;
+  box-shadow: 1px 1px 7px #82a1d1;
+  background-color: #e0e0e0;
+}
+
+.title {
+  font-weight: bold;
+}

@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Phonebook</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="addContact()">Add Contact</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <div class="cards-container">
+      <!-- <div class="cards"> -->
+      <div
+        class="cards"
+        *ngFor="let contact of filteredContacts; let i = index"
+      >
+        <div class="data">
+          <div class="title">
+            {{ contact.firstName }} {{ contact.lastName }} <br /><br />
+          </div>
+          Phone: {{ contact.phoneNumber }} <br />
+          Email: {{ contact.email }} <br />
+          Notes: {{ contact.notes }} <br />
+          Category: {{ contact.category }}
+        </div>
+        <div class="card-btn">
+          <ion-button
+            fill="outline"
+            size="small"
+            color="danger"
+            (click)="deleteContact(contact)"
+            >Delete</ion-button
+          >
+          <ion-button
+            fill="outline"
+            size="small"
+            color="primary"
+            (click)="editContact(i)"
+            >Edit</ion-button
+          >
+          <ion-button
+            *ngIf="contact.phoneNumber.length >= 8"
+            fill="outline"
+            size="small"
+            color="success"
+            (click)="callContact(contact.phoneNumber)"
+          >
+            Call
+          </ion-button>
+        </div>
+      </div>
+      <!-- </div> -->
+    </div>
+    <div class="button"></div>
+  </div>
+</ion-content>

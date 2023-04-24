@@ -1,0 +1,80 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add Contact</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-input
+      label="First Name"
+      labelPlacement="stacked"
+      placeholder="Enter Name"
+      value=""
+      [(ngModel)]="firstName"
+    ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input
+      label="Last Name"
+      labelPlacement="stacked"
+      placeholder="Enter Name"
+      [(ngModel)]="lastName"
+    ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input
+      label="Phone Number"
+      labelPlacement="stacked"
+      type="tel"
+      placeholder="88-8888-8888"
+      [(ngModel)]="phoneNumber"
+    ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input
+      label="Email"
+      labelPlacement="stacked"
+      type="email"
+      placeholder="email@domain.com"
+      [(ngModel)]="email"
+    ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-textarea
+      label="Notes"
+      labelPlacement="stacked"
+      type="notes"
+      placeholder="Enter note"
+      [autoGrow]="true"
+      [(ngModel)]="notes"
+    ></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-select
+      aria-label="Category"
+      interface="popover"
+      placeholder="Select category"
+      [(ngModel)]="category"
+    >
+      <ion-select-option value="family">Family</ion-select-option>
+      <ion-select-option value="friends">Friends</ion-select-option>
+      <ion-select-option value="work">Work</ion-select-option>
+      <ion-select-option value="other">Other</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-fab vertical="bottom" horizontal="end">
+    <ion-fab-button>
+      <ion-icon name="save-outline" (click)="saveContact()"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
